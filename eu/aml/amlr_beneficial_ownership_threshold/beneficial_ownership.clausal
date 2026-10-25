@@ -368,11 +368,9 @@ no_statute("not_an_integer", 1, "computation_helper").
 %   not profile_has(P,K) -> kit profile_lacks(P, K)    (dif/2 from every key)
 %   not is_list(X)       -> not_a_proper_list/1
 %   not integer(X)       -> not_an_integer/1
-% ONE negation is left: `\+ dict_keys(Profile, _)` for not_a_profile. The
-% engine's dict is neither atomic nor compound, while the ISO export's dict
-% is an attribute(Key, Value) list, which IS compound, so no positive type
-% test names "not a dict" on both; it needs a reified dict test from the
-% engine and the dict shim.
+% The last negation, `\+ dict_keys(Profile, _)`, is now is_dict_t(Profile, false):
+% the engine's reified dict test (engine round 3), supplied in the ISO export
+% by the dict companion. No negation is left.
 amlr_bo_input_problem(Profile, Problem) :-
     findall(Candidate, input_problem_candidate(Profile, Candidate), [Problem|_]).
 
@@ -383,7 +381,7 @@ input_problem_candidate(Profile, not_ground) :-
     term_variables(Profile, [_|_]).
 input_problem_candidate(Profile, not_a_profile) :-
     ground(Profile),
-    \+ dict_keys(Profile, _).
+    is_dict_t(Profile, false).
 input_problem_candidate(Profile, missing_key(ownership_chains)) :-
     ground(Profile),
     dict_keys(Profile, _),

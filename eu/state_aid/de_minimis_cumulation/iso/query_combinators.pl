@@ -4,7 +4,7 @@
 :- use_module(library(lists), [member/2]).
 :- use_module(library(lists), [sum_list/2]).
 :- use_module(library(dif), [dif/2]).
-:- use_module('clausal_profiles', [attrs_put/3]).
+:- use_module('clausal_kit_dicts', [attrs_put/3]).
 :- use_module('clausal_hof', [call_goal/2]).
 :- use_module('clausal_hof', [call_goal/3]).
 :- use_module('clausal_hof', [call_goal/4]).

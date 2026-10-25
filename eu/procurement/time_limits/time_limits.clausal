@@ -425,11 +425,9 @@ conformity_of_check_status(CheckStatus, observed_days_not_supplied) :-
 %   not (S in STAGE_VALUES)        -> not_member(S, STAGE_VALUES) (kit, dif-based)
 %   not (V is True/False)          -> dif(V, true), dif(V, false)
 %   not integer(D)                 -> not_an_integer/1
-% ONE negation is left: `\+ dict_keys(Profile, _)` for not_a_dict. The engine's
-% dict is neither atomic nor compound, while the ISO export's dict is an
-% attribute(Key, Value) list, which IS compound, so no positive type test
-% names "not a dict" on both; it needs a reified dict test from the engine
-% and the dict shim.
+% The last negation, `\+ dict_keys(Profile, _)`, is now is_dict_t(Profile, false):
+% the engine's reified dict test (engine round 3), supplied in the ISO export
+% by the dict companion. No negation is left.
 time_limits_input_problems(Profile, Problems) :-
     findall(Problem, input_problem_in_order(Profile, Problem), Problems).
 
@@ -443,7 +441,7 @@ input_problem_in_order(Profile, not_ground) :-
     term_variables(Profile, [_|_]).
 input_problem_in_order(Profile, not_a_dict) :-
     ground(Profile),
-    \+ dict_keys(Profile, _).
+    is_dict_t(Profile, false).
 input_problem_in_order(Profile, missing_key(procedure_type_key)) :-
     ground(Profile), dict_keys(Profile, _),
     profile_lacks(Profile, procedure_type_key).

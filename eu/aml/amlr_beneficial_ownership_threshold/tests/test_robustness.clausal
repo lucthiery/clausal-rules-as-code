@@ -233,6 +233,10 @@ test('input check reports not_ground for an unbound level inside a chain') :-
     amlr_bo_input_problem(Profile, not_ground).
 test('input check reports not_a_profile for an atom profile') :-
     amlr_bo_input_problem('profile', not_a_profile).
+% The profile given as the empty LIST is not a dict on every engine: in the ISO export the empty
+% DICT is '{}', so [] is a list there too, and exactly one problem is reported.
+test('input check reports not_a_profile, once, for a profile given as the empty list') :-
+    findall(P, amlr_bo_input_problem([], P), [not_a_profile]).
 test('input check reports missing_key for the empty profile') :-
     dict_pairs(Profile, []),
     amlr_bo_input_problem(Profile, missing_key(ownership_chains)).
