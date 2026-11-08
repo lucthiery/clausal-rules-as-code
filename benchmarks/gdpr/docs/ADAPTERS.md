@@ -69,6 +69,10 @@ Legal approval of a Prolog module and equivalence to the Python baseline are sep
 
 The recorded upstream inspection concerns the public [clausal-rules-as-code repository](https://github.com/neurosymbolica/clausal-rules-as-code). [Its inspection record](../sources/upstream-check.json) preserves the inspected revision and evidence. A filename or comment mentioning GDPR does not activate a module. Private or unpublished work was not inspected; no upstream rule program was executed or copied into this package.
 
+## Exploratory remote demo adapter
+
+[DEMO_INTEGRATION.md](DEMO_INTEGRATION.md) documents the separate `demo-run` and `demo-coverage` commands, observed web-form interface, supplied-fact mappings and live evidence. This path creates exploratory observations only and does not satisfy or bypass the reviewed Prolog contract above.
+
 ## Legal-product exchange
 
 Harvey, Legora and Noxtua use manual product-export/product-import bundles. Official APIs may exist; this release neither assumes access nor implements a private undocumented endpoint. Harvey's [API permissions](https://developers.harvey.ai/api-reference/authentication) and Legora's [order-form-dependent APIs](https://legora.com/legal/security-measures) illustrate the distinction.

@@ -18,6 +18,7 @@ gdpr-benchmark/
 │   ├── BUSINESS_CASE.md
 │   ├── CASES.md
 │   ├── DATA_CONTRACT.md
+│   ├── DEMO_INTEGRATION.md
 │   ├── HANDOFF.md
 │   ├── IMPLEMENTATION_PLAN.md
 │   ├── PROJECT_CONCEPT.md
@@ -32,6 +33,7 @@ gdpr-benchmark/
 │   ├── analysis.py
 │   ├── cli.py
 │   ├── dataset.py
+│   ├── demo.py
 │   ├── economics.py
 │   ├── evaluation.py
 │   ├── fact_schema.py
@@ -57,6 +59,15 @@ gdpr-benchmark/
 │   │   │   └── law-manifest.json
 │   │   └── roles.json
 │   ├── decision.json
+│   ├── demo-integration-2026-11-09/
+│   │   ├── README.md
+│   │   ├── comparisons.jsonl
+│   │   ├── coverage.csv
+│   │   ├── manifest.json
+│   │   ├── observations.jsonl
+│   │   ├── tests-python311.txt
+│   │   ├── tests-python315.txt
+│   │   └── upstream-adoption.json
 │   ├── economics-illustrative.json
 │   ├── evaluation-matrix.csv
 │   ├── legal-review-pending.jsonl
@@ -90,6 +101,7 @@ gdpr-benchmark/
     ├── test_analysis.py
     ├── test_controlled_pipeline.py
     ├── test_dataset.py
+    ├── test_demo.py
     ├── test_economics.py
     ├── test_evaluation.py
     ├── test_live_contract.py

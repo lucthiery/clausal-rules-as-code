@@ -46,7 +46,9 @@ def main():
                     (["-m", "gdpr_bench", "decision", "--analysis", "runs/study.json", "--economics", "runs/economics.json", "--out", "runs/decision.json"], 0),
                     (["-m", "gdpr_bench", "matrix", "--runs", "runs/all", "--out", "runs/matrix.json"], 0),
                     (["-m", "gdpr_bench", "product-export", "--product", "harvey", "--out", "runs/product-packet"], 0),
-                    (["-m", "gdpr_bench", "product-import", "runs/product-packet", "runs/product-packet/responses.jsonl", "--out", "runs/product-import"], 0)]
+                    (["-m", "gdpr_bench", "product-import", "runs/product-packet", "runs/product-packet/responses.jsonl", "--out", "runs/product-import"], 0),
+                    (["-m", "gdpr_bench", "demo-coverage", "--out", "runs/demo-coverage.json"], 0),
+                    (["-m", "gdpr_bench", "demo-run", "--out", "runs/demo-offline"], 2)]
         for arguments, expected in commands:
             completed = subprocess.run([sys.executable, *arguments], cwd=package, text=True, capture_output=True, timeout=120)
             record["steps"].append({"arguments": arguments, "exit_code": completed.returncode, "expected_exit_code": expected,
@@ -62,6 +64,9 @@ def main():
         assert json.loads((package / "runs/decision.json").read_text())["decision"] == "inconclusive"
         assert len(json.loads((package / "runs/matrix.json").read_text())) == 870
         assert json.loads((package / "runs/product-import/manifest.json").read_text())["counts"]["blocked"] == 30
+        coverage = json.loads((package / "runs/demo-coverage.json").read_text())
+        assert len(coverage) == 70 and sum(r["coverage"] == "partial" for r in coverage) == 8
+        assert not (package / "runs/demo-offline").exists()
         record.update(status="passed", actual_api_calls=0, full_run_counts=manifest["counts"])
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n")

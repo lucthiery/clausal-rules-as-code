@@ -22,7 +22,7 @@ This release implements the complete research concept and the evaluation machine
 | Same law text for all model conditions | ../sources; ../gdpr_bench/law.py and prompts.py | Frozen complete relevant articles and per-case hashes |
 | Same-model matched comparison | ../gdpr_bench/runner.py | Shared extraction; final prompt differs by engine evidence |
 | LLM + Python comparator | llm_python condition | Actual bounded Python engine on model-extracted facts |
-| LLM + Prolog and supplied-fact oracle | ../gdpr_bench/prolog.py; ../config/prolog.example.json | Interface implemented; genuine GDPR engine absent, runs blocked |
+| LLM + Prolog and supplied-fact oracle | ../gdpr_bench/prolog.py; ../config/prolog.example.json | Reviewed local interface implemented; formal runs blocked; separate provisional remote demo diagnostics now available |
 | OpenAI, Opus, Sonnet, Gemini, Qwen, DeepSeek | ../gdpr_bench/providers.py; ../config/models.example.json | Configurable adapters; no live account/model performance claim |
 | Harvey, Legora, Noxtua comparison | ../gdpr_bench/products.py | Genuine manual response export/import; no access or answers claimed |
 | Complete evaluation matrix | ../reports/evaluation-matrix.csv | 29 registered conditions × 30 = 870 cells, not 870 independent cases |
@@ -45,4 +45,8 @@ Business ownership must run discovery and a paid or explicitly committed pilot, 
 
 The full handoff is for a collaborator managing the project. It includes the private identity mapping for the local baseline demonstration, clearly separate from the reviewer folder. Give blinded evaluators only their dedicated reviewer bundle. Do not send the full repository to a reviewer while claiming they are blind to condition identities.
 
-No external LLM or commercial product responses were generated for this release. No completed legal review, customer interview, sales commitment or GDPR Prolog result is included. Technical test fixtures are marked as fixtures and kept in tests. None of the included reports assert superiority or a validated business case.
+No external LLM or commercial product responses were generated for this release. No completed legal review, customer interview, sales commitment or reviewed GDPR Prolog benchmark result is included. Technical test fixtures are marked as fixtures and kept in tests. None of the included reports assert superiority or a validated business case.
+
+## 9 November integration addendum
+
+The [demo integration](DEMO_INTEGRATION.md) adds an adapter, a 70-row partial-coverage matrix and sixteen genuine remote observations for eight breach subquestions. [The result report](../reports/demo-integration-2026-11-09/README.md) distinguishes missing facts, held-out protection, explicit duty outputs and a duty not returned. These observations are not reviewed oracle results or complete company-case answers. The original dataset, references, main evaluation matrix and study gates remain unchanged.

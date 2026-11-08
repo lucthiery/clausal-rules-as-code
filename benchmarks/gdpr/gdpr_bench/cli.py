@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 from .dataset import ROOT, digest_json, load_cases, load_gold, read_jsonl, sha256, write_json, write_jsonl
@@ -68,6 +69,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="GDPR Legal-AI benchmark: provisional gold, explicit blocked Prolog conditions")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate", help="Validate exact 30/20/10 inventory, gold, law and frozen hashes")
+    p = sub.add_parser("demo-coverage", help="Exploratory demo mapping across 70 subquestions; not the study matrix")
+    p.add_argument("--out", required=True)
+    p = sub.add_parser("demo-run", help="Eight synthetic breach subquestions against an operator-configured private demo")
+    p.add_argument("--out", required=True)
+    p.add_argument("--base-url-env", default="GDPR_DEMO_BASE_URL")
+    p.add_argument("--live", action="store_true")
+    p.add_argument("--include-no-order-sensitivity", action="store_true", help="Also run an explicitly assumed no-authority-decision scenario")
     p = sub.add_parser("doctor", help="Local source/provider readiness; no network requests or credentials printed")
     p.add_argument("--models", default=str(ROOT / "config/models.example.json"))
     p.add_argument("--prolog-manifest")
@@ -151,6 +159,19 @@ def main(argv=None):
     try:
         if args.command == "validate":
             emit(validate())
+        elif args.command == "demo-coverage":
+            from .demo import write_coverage
+            validate()
+            emit(write_coverage(args.out))
+        elif args.command == "demo-run":
+            from .demo import run_integration
+            validate()
+            base_url = os.environ.get(args.base_url_env)
+            if not base_url:
+                raise ValueError("Set the demo origin in the chosen environment variable; do not commit access details")
+            result = run_integration(args.out, base_url, live=args.live, include_sensitivity=args.include_no_order_sensitivity)
+            emit({k: result[k] for k in ("status", "selected_subquestions", "counts", "benchmark_eligible")})
+            return 0 if result["status"] == "completed" else 3
         elif args.command == "doctor":
             config = json.loads(Path(args.models).read_text())
             emit({"dataset": validate(), "prolog": PrologAdapter(args.prolog_manifest).availability(),

@@ -21,6 +21,10 @@ Start with [PROJECT_CONCEPT](docs/PROJECT_CONCEPT.md), then [BUSINESS_CASE](docs
 | [Verification](reports/VERIFICATION.md) | Actual local checks and remaining limits |
 | [Law provenance](sources/law-manifest.json), [upstream inspection](sources/upstream-check.json), [market evidence](sources/market-evidence.json) | Pinned legal text, public Prolog inspection and primary vendor sources |
 
+## Provisional demo integration addendum — 9 November 2026
+
+The [demo adapter and mapping](docs/DEMO_INTEGRATION.md) now have [recorded live integration results](reports/demo-integration-2026-11-09/README.md). The separate [coverage matrix](reports/demo-integration-2026-11-09/coverage.csv) covers all 70 questions and marks eight as partially mapped. Sixteen requests cover eight strict-source and eight explicitly assumed-no-authority-decision variants: the strict variant has eight missing-fact responses; the sensitivity variant has four explicit duty outputs, three held-out responses and one duty not returned. These are provisional remote diagnostics, excluded from the formal study arms and legal accuracy scores. The frozen dataset and gold remain unchanged.
+
 ## Run locally
 
 Python 3.11 or newer; no third-party packages, account or internet connection is required for the local baseline, evaluation tools or tests. In the extracted `gdpr-benchmark` folder:
