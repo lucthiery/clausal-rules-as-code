@@ -1,6 +1,8 @@
-# Six GDPR boundary cases: does the demo improve model answers?
+# Six GDPR boundary cases: supplied rule-output augmentation
 
-**Finding: this pilot does not demonstrate a reliable improvement from Mike's tool.** In the provisional assistant assessment, adding the demo output changes one of 48 paired model-question scores upward and leaves 47 unchanged. Most answers were already strong with legislation alone. Limited demo coverage, a ceiling effect, one run per condition and subjective grading prevent a causal or general performance claim.
+**Scope correction (9 November 2026): this is an LLM augmentation experiment, not Mike's end-to-end system versus standalone models.** A subsequent [direct agent access check](../system-access-2026-11-09/README.md) submitted all six narratives: the agent was reachable but rejected every GDPR case as out of scope. Its substantive legal quality remains unevaluated.
+
+**Finding limited to this augmentation experiment: supplying the observed demo outputs did not demonstrate reliable improvement in the tested LLM answers.** In the provisional assistant assessment, adding the demo output changes one of 48 paired model-question scores upward and leaves 47 unchanged. Most answers were already strong with legislation alone. Limited demo coverage, a ceiling effect, one run per condition and subjective grading prevent a causal or general performance claim.
 
 This is a separate exploratory extension, not a replacement or expansion of the frozen GDPR-30 dataset. Six new synthetic cases × two questions × four models × three conditions produced **12 actual CLI model calls and 144 answer objects**. Eleven calls passed the strict question-ID schema; one returned a mislabelled question that is explicitly aligned for content review below. No successful inference was rerun and no substitute model was used.
 

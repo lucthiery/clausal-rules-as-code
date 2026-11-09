@@ -27,7 +27,7 @@ The [demo adapter and mapping](docs/DEMO_INTEGRATION.md) now have [recorded live
 
 ## Exploratory four-model boundary-case pilot
 
-[Read the six-case comparison](reports/edge-pilot-2026-11-09/README.md): OpenAI Sol/Astra and Claude Opus/Sonnet, with legislation alone, additional RIS decisions, or actual demo outputs. Twelve CLI calls returned 144 answer objects; one output failed strict question-ID validation. Provisional assistant ratings show no reliable improvement attributable to the demo. This separate supplied-fact study does not alter the formal six-arm protocol, frozen GDPR-30 data or independent-review gates. The experiment documents all limitations and original outputs.
+[Read the six-case comparison](reports/edge-pilot-2026-11-09/README.md): OpenAI Sol/Astra and Claude Opus/Sonnet, with legislation alone, additional RIS decisions, or actual demo outputs. Twelve CLI calls returned 144 answer objects; one output failed strict question-ID validation. Provisional assistant ratings concern rule-output augmentation only; they do not compare Mike’s whole system against the models. A subsequent [direct six-case agent check](reports/system-access-2026-11-09/README.md) reached the chat endpoint, but all six GDPR narratives were rejected as out of scope. End-to-end legal accuracy remains unevaluated. This separate supplied-fact study does not alter the formal six-arm protocol, frozen GDPR-30 data or independent-review gates. The experiment documents all limitations and original outputs.
 
 ## Run locally
 
