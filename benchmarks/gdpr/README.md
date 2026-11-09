@@ -25,6 +25,10 @@ Start with [PROJECT_CONCEPT](docs/PROJECT_CONCEPT.md), then [BUSINESS_CASE](docs
 
 The [demo adapter and mapping](docs/DEMO_INTEGRATION.md) now have [recorded live integration results](reports/demo-integration-2026-11-09/README.md). The separate [coverage matrix](reports/demo-integration-2026-11-09/coverage.csv) covers all 70 questions and marks eight as partially mapped. Sixteen requests cover eight strict-source and eight explicitly assumed-no-authority-decision variants: the strict variant has eight missing-fact responses; the sensitivity variant has four explicit duty outputs, three held-out responses and one duty not returned. These are provisional remote diagnostics, excluded from the formal study arms and legal accuracy scores. The frozen dataset and gold remain unchanged.
 
+## Exploratory four-model boundary-case pilot
+
+[Read the six-case comparison](reports/edge-pilot-2026-11-09/README.md): OpenAI Sol/Astra and Claude Opus/Sonnet, with legislation alone, additional RIS decisions, or actual demo outputs. Twelve CLI calls returned 144 answer objects; one output failed strict question-ID validation. Provisional assistant ratings show no reliable improvement attributable to the demo. This separate supplied-fact study does not alter the formal six-arm protocol, frozen GDPR-30 data or independent-review gates. The experiment documents all limitations and original outputs.
+
 ## Run locally
 
 Python 3.11 or newer; no third-party packages, account or internet connection is required for the local baseline, evaluation tools or tests. In the extracted `gdpr-benchmark` folder:

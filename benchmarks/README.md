@@ -2,6 +2,9 @@
 
 ## GDPR-30: concept and evaluation suite
 
+**New exploratory evidence (9 November 2026):** [Six boundary cases × four models × three conditions](gdpr/reports/edge-pilot-2026-11-09/README.md). Twelve actual model calls; no reliable answer-quality gain from the current demo demonstrated. Original answers, provisional ratings, coverage and reproducible analysis included. The ZIP below remains the earlier frozen handoff snapshot and does not include this later pilot.
+
+
 [Start with the full English handoff](gdpr/README.md). The package contains exactly 30 synthetic GDPR tasks (20 focused and 10 complex, 70 subquestions), provisional reference answers, the concept and business analysis, six experimental arms, model/product adapters, independent legal review workflows, statistical analysis and full-cost scenarios.
 
 - [Full concept](gdpr/docs/PROJECT_CONCEPT.md) and [business analysis](gdpr/docs/BUSINESS_CASE.md)
