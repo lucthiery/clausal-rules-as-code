@@ -1,5 +1,7 @@
 # GDPR Legal-AI Benchmark — English handoff, release 2.0
 
+[Consolidated handoff status for Mike — 11 November 2026](docs/STATUS_FOR_MIKE.md): delivered package, executed tests, interpretation limits and next steps.
+
 **Exactly 30 tasks: 20 focused GDPR cases and 10 realistic company cases with five subquestions each (70 subquestions).** The full concept, business analysis, evaluation protocol, readable cases and provisional reference answers are included. This is an executable research package, not a completed empirical study.
 
 Start with [PROJECT_CONCEPT](docs/PROJECT_CONCEPT.md), then [BUSINESS_CASE](docs/BUSINESS_CASE.md). [HANDOFF](docs/HANDOFF.md) maps every deliverable and outstanding evidence gate. [PROJECT_TREE](docs/PROJECT_TREE.txt) lists the complete delivered repository. Everything in the authored handoff is English; source files preserve their original format.

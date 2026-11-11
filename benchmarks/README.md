@@ -2,6 +2,8 @@
 
 ## GDPR-30: concept and evaluation suite
 
+**Current consolidated status (11 November 2026):** [What has been delivered, what actually ran, and what is still needed from Mike](gdpr/docs/STATUS_FOR_MIKE.md).
+
 **New exploratory evidence (9 November 2026):** [Six boundary cases × four models × three conditions](gdpr/reports/edge-pilot-2026-11-09/README.md). Twelve actual model calls tested supplied rule-output augmentation, not Mike’s own end-to-end agent. A [direct six-case agent check](gdpr/reports/system-access-2026-11-09/README.md) subsequently returned six GDPR scope rejections; whole-system legal accuracy remains unevaluated. Original answers, provisional ratings, coverage and reproducible analysis included. The ZIP below remains the earlier frozen handoff snapshot and does not include this later pilot.
 
 
